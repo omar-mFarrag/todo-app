@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Link fot style sheet -->
+  <link rel="stylesheet" href="./style/main.css">
+  <!-- links for google fonts (Josefin sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+    rel="stylesheet">
+
+<body id="body">
+  <img id="backGround" class="backGround" src="./images/bg-desktop-dark.jpg" alt="backGround">
+  <div class="the-cotainer">
+    <div class="content">
+      <header>
+        <h1>todo</h1><img id="theme-icone" src="./images/icon-sun.svg" alt="" srcset="">
+      </header>
+      <!-- Todo Creator -->
+      <div class="todo-creator">
+        <button class="" id="todo-creator-btn"><img src="./images/icon-check.svg" alt=""></button>
+        <input id="todo-adding-content" type="text" placeholder="Create a new todo...">
+      </div>
+      <!-- Todo list -->
+      <div class="todo-list">
+        <div class="todos">
+          <div class="todo">
+            <button class="done-btn"><img src="./images/icon-check.svg" alt=""></button>
+            <p>Complete online JavaScript course</p>
+          </div>
+          <div class="todo">
+            <button class="done-btn"><img src="./images/icon-check.svg" alt=""></button>
+            <p>Jog around the park 3x</p>
+          </div>
+          <div class="todo">
+            <button class="done-btn"><img src="./images/icon-check.svg" alt=""></button>
+            <p>10 minuts meditation</p>
+          </div>
+          <div class="todo">
+            <button class="done-btn"><img src="./images/icon-check.svg" alt=""></button>
+            <p>Read for 1 hour</p>
+          </div>
+          <div class="todo">
+            <button class="done-btn"><img src="./images/icon-check.svg" alt=""></button>
+            <p>Pick up groceries</p>
+          </div>
+          <div class="todo">
+            <button class="done-btn"><img src="./images/icon-check.svg" alt=""></button>
+            <p>Complete Todo App on Frontend Mentor</p>
+          </div>
+        </div>
+        <footer class="footer-of-todo-list">
+          <div class="nums-of-todo">
+            <p><span>5 </span>items left</p>
+          </div>
+          <div class="filters-pc">
+            <span class="active">All</span>
+            <span>Active</span>
+            <span>Completed</span>
+          </div>
+          <span class="clearCopm">Clear Completed</span>
+        </footer>
+        <div class="filters-mobile">
+          <span class="active">All</span>
+          <span>Active</span>
+          <span>Completed</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="./script/script.js"></script>
+</body>
+
+</html>
