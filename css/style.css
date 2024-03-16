@@ -441,6 +441,9 @@ body.dark .todo-footer .filter-pc span:hover{
     display: none;
 }
 @media (max-width: 800px) {
+    *{
+        cursor: unset;
+    }
     .todo-footer .filter-pc{
         display: none;
     }
