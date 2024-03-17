@@ -12,7 +12,7 @@
 }
 
 ::-webkit-scrollbar {
-    width: 10px;
+    width: 5px;
 }
 
 /* Track */
@@ -258,7 +258,6 @@ body.dark .todo-creator input::placeholder {
 
 .todos {
     width: 100%;
-    height: fit-content;
     background-color: var(--light-List-Background);
 }
 
@@ -475,61 +474,29 @@ body.dark .todo-footer .filter-pc span:hover {
     overflow-y: scroll;
 }
 
-@media (max-width: 1280px) {
+@media (max-width: 1024px) {
     body .app-ui {
         width: 95%;
         gap: 10px;
     }
+
     ::-webkit-scrollbar {
-        width: 5px;
+        width: 3px;
     }
-    
+
     /* Track */
     ::-webkit-scrollbar-track {
         background: transparent;
     }
-    
+
     /* Handle */
     ::-webkit-scrollbar-thumb {
         background: var(--Bright-Blue);
-        border-radius: 2px;
+        border-radius: 1px;
     }
 }
 
-@media (max-width: 822px) {
-    .todo-footer .filter-pc {
-        display: none;
-    }
-
-    .filter-mobile {
-        display: flex;
-        background-color: var(--light-List-Background);
-        width: 100%;
-        padding: 20px;
-        border-radius: 7px;
-        justify-content: space-around;
-        align-items: center;
-    }
-
-    body.dark .filter-mobile {
-        background-color: var(--dark-List-Background);
-    }
-
-    .filter-mobile span {
-        color: var(--light-Placeholder-Color);
-        font-size: 19px;
-        cursor: pointer;
-        font-weight: bold;
-    }
-
-    body.dark .filter-mobile span {
-        color: var(--dark-Placeholder-Color);
-    }
-
-    .filter-mobile span.active,
-    body.dark .filter-mobile span.active {
-        color: var(--Bright-Blue);
-    }
+@media (max-width: 767px) {
 
     body .app-ui {
         width: 95%;
@@ -571,33 +538,173 @@ body.dark .todo-footer .filter-pc span:hover {
     }
 }
 
-@media (min-height: 480px) {
-
-    body .app-ui .todos {
-        height: 250px;
+@media (max-width: 600px) {
+    .todo-footer .filter-pc {
+        display: none;
     }
 
-    body .app-ui .todo-list {
-        border-radius: 3px;
+    .filter-mobile {
+        display: flex;
+        background-color: var(--light-List-Background);
+        width: 100%;
+        padding: 20px;
+        border-radius: 7px;
+        justify-content: space-around;
+        align-items: center;
     }
 
-    body .app-ui .todos .todo {
-        padding: 10px 10px;
+    body.dark .filter-mobile {
+        background-color: var(--dark-List-Background);
+    }
+
+    .filter-mobile span {
+        color: var(--light-Placeholder-Color);
+        cursor: pointer;
+        font-weight: bold;
+    }
+
+    body.dark .filter-mobile span {
+        color: var(--dark-Placeholder-Color);
+    }
+
+    .filter-mobile span.active,
+    body.dark .filter-mobile span.active {
+        color: var(--Bright-Blue);
+    }
+}
+
+/* For handeling heights */
+/* iPad Pro screen */
+@media (max-height: 1370px) {
+    .todos {
+        height: 1000px;
+    }
+}
+
+/* iPad Air */
+@media (max-height: 1181px) {
+    .todos {
+        height: 900px;
+    }
+}
+
+/* iPad */
+/* iPad Mini */
+@media (max-height: 1024px) {
+    .todos {
+        height: 700px;
+    }
+}
+
+/* iPhone 14 pro max */
+@media (max-height: 935px) {
+    .todos {
+        height: 600px;
+    }
+}
+
+/* iPhone 12 pro */
+@media (max-height: 844px) {
+    .todos {
+        height: 500px;
+    }
+}
+
+/* iPhone 6.7.8 plus */
+@media (max-height: 748px) {
+    .todos {
+        height: 400px;
+    }
+}
+
+/* iPhone SE */
+@media (max-width: 450px) {
+    .todo-creator {
+        gap: 15px;
+    }
+
+    .the-button {
+        padding: 1px;
+    }
+
+    .the-button button {
+        width: 20px;
+        height: 20px;
+    }
+
+    .todo .todo-button {
+        padding: 1px;
+    }
+
+    .todo-button button {
+        width: 20px;
+        height: 20px;
+    }
+
+    .todo-list .todos .todo p {
+        font-size: 14px;
+    }
+
+    .todo-footer span {
+        font-size: 14px;
+    }
+
+    .filter-mobile span {
+        font-size: 14px;
+    }
+}
+
+@media (max-height: 668px) {
+    .todos {
+        height: 350px;
+    }
+}
+
+@media (max-height: 569px) {
+    .todos {
+        height: 280px;
+    }
+}
+
+/* iPhone 4 */
+@media (max-height: 481px) {
+    body .app-ui {
+        gap: 5px;
+    }
+
+    .app-ui .header h1 {
+        font-size: 20px;
+    }
+
+    .app-ui .header i {
+        font-size: 20px;
     }
 
     .todo-creator {
-        padding: 0px 10px;
-        border-radius: 3px;
-        gap: 10px;
-    }
-
-    body .app-ui .todos .todo p {
-        font-size: 13px;
+        border-radius: 2px;
         padding: 10px;
     }
 
+    .todo-creator input {
+        height: 30px;
+    }
+
+    .todo-list {
+        border-radius: 2px;
+    }
+
+    .todo-list .todos .todo {
+        padding: 10px;
+        gap: 0px;
+    }
+
+    .todo-list .todos .todo p {
+        font-size: 13px;
+        padding: 0px 10px;
+    }
+
     .todo-footer {
-        padding: 10px 10px;
+        padding: 16px;
     }
 
     .todo-footer span {
@@ -605,98 +712,64 @@ body.dark .todo-footer .filter-pc span:hover {
     }
 
     .filter-mobile {
-        padding: 10px 10px;
-        border-radius: 3px;
+        padding: 10px;
+        border-radius: 2px;
     }
 
     .filter-mobile span {
-        font-size: 14px;
-    }
-}
-@media (min-height: 568px) {
-    body .app-ui .todos {
-        height: 290px;
-    }
-
-    body .app-ui .todos .todo {
-        padding: 15px 20px;
+        font-size: 13px;
     }
 }
 
-@media (min-height: 667px) {
-    body .app-ui .todos {
-        height: 350px;
+/* for mobile rotation */
+@media (max-height: 440px) {
+    .todo-creator input {
+        height: 20px;
     }
 
-    body .app-ui .todos .todo {
-        padding: 15px 20px;
-    }
-}
-@media (min-height: 736px) {
-    body .app-ui .todos {
-        height: 480px;
-    }
-
-    body .app-ui .todos .todo {
-        padding: 15px 20px;
-    }
-}
-@media (min-height: 812px) {
-    body .app-ui .todos {
-        height: 480px;
-    }
-
-    body .app-ui .todos .todo {
-        padding: 15px 20px;
+    .todos {
+        height: 220px;
     }
 }
 
-@media (min-height: 844px) {
-    body .app-ui .todos {
-        height: 500px;
+@media (max-height: 370px) {
+    .todo-creator input {
+        height: 20px;
     }
 
-    body .app-ui .todos .todo {
-        padding: 15px 20px;
-    }
-}
-
-@media (min-height: 932px) {
-    body .app-ui .todos {
-        height: 550px;
+    .todos {
+        height: 170px;
     }
 
-    body .app-ui .todos .todo {
-        padding: 15px 20px;
+    .todo-footer {
+        padding: 5px 10px;
     }
 }
 
-@media (min-height: 1024px) {
-    body .app-ui .todos {
-        height: 650px;
+@media (max-height: 350px) {
+    .todo-creator input {
+        height: 20px;
     }
 
-    body .app-ui .todos .todo {
-        padding: 20px;
-    }
-}
-
-@media (min-height: 1180px) {
-    body .app-ui .todos {
-        height: 900px;
+    .todos {
+        height: 150px;
     }
 
-    body .app-ui .todos .todo {
-        padding: 20px;
-    }
-}
-
-@media (min-height: 1366px) {
-    body .app-ui .todos {
-        height: 1000px;
+    .the-button {
+        padding: 1px;
     }
 
-    body .app-ui .todos .todo {
-        padding: 20px;
+    .the-button button {
+        width: 15px;
+        height: 15px;
+    }
+
+    .todo .todo-button {
+        padding: 1px;
+    }
+
+    .todo-button button {
+        width: 15px;
+        height: 15px;
     }
 }
