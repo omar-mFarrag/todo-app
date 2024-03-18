@@ -141,7 +141,7 @@ body.dark .the-button button {
 /* Start of body */
 body {
     width: 100%;
-    height: 100vh;
+    height: 100dvh;
     position: relative;
     background-color: var(--light-App-Background);
 }
@@ -163,7 +163,7 @@ body.dark {
 /* high layer styling */
 .high-layer {
     width: 100%;
-    height: 100vh;
+    height: 100dvh;
     display: flex;
     justify-content: center;
     align-items: center;
