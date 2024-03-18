@@ -259,6 +259,9 @@ body.dark .todo-creator input::placeholder {
 .todos {
     width: 100%;
     background-color: var(--light-List-Background);
+    display: flex;
+    flex-direction: column;
+    position: relative;
 }
 
 body.dark .todos {
@@ -375,6 +378,7 @@ body.dark .todo-button button {
     padding-right: 20px;
     font-size: 20px;
     color: var(--light-Todo-Font-Color);
+    overflow-wrap: anywhere;
 }
 
 .todo.done p {
@@ -494,6 +498,10 @@ body.dark .todo-footer .filter-pc span:hover {
         background: var(--Bright-Blue);
         border-radius: 1px;
     }
+    .todo-list .todos .todo i.fa-x {
+        opacity: 1;
+        font-size: 16px;
+    }
 }
 
 @media (max-width: 767px) {
@@ -527,10 +535,6 @@ body.dark .todo-footer .filter-pc span:hover {
         padding: 10px 15px;
     }
 
-    .todo-list .todos .todo i.fa-x {
-        opacity: 1;
-        font-size: 16px;
-    }
 
     .todo-list .todos .todo p {
         font-size: 15px;
@@ -772,4 +776,19 @@ body.dark .todo-footer .filter-pc span:hover {
         width: 15px;
         height: 15px;
     }
+}
+
+
+#if-empty{
+    color: var(--light-Todo-Font-Color);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 16px;
+    width: 100%;
+    text-align: center;
+}
+body.dark #if-empty{
+    color: var(--dark-Todo-Font-Color);
 }
