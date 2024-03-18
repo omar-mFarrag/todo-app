@@ -588,7 +588,7 @@ body.dark .todo-footer .filter-pc span:hover {
 /* iPad Air */
 @media (max-height: 1181px) {
     .todos {
-        height: 900px;
+        height: 800px;
     }
 }
 
@@ -596,28 +596,28 @@ body.dark .todo-footer .filter-pc span:hover {
 /* iPad Mini */
 @media (max-height: 1024px) {
     .todos {
-        height: 700px;
+        height: 600px;
     }
 }
 
 /* iPhone 14 pro max */
 @media (max-height: 935px) {
     .todos {
-        height: 600px;
+        height: 500px;
     }
 }
 
 /* iPhone 12 pro */
 @media (max-height: 844px) {
     .todos {
-        height: 500px;
+        height: 400px;
     }
 }
 
 /* iPhone 6.7.8 plus */
 @media (max-height: 748px) {
     .todos {
-        height: 400px;
+        height: 330px;
     }
 }
 
@@ -660,13 +660,13 @@ body.dark .todo-footer .filter-pc span:hover {
 
 @media (max-height: 668px) {
     .todos {
-        height: 350px;
+        height: 280px;
     }
 }
 
 @media (max-height: 569px) {
     .todos {
-        height: 280px;
+        height: 220px;
     }
 }
 
@@ -732,7 +732,7 @@ body.dark .todo-footer .filter-pc span:hover {
     }
 
     .todos {
-        height: 220px;
+        height: 170px;
     }
 }
 
@@ -742,7 +742,7 @@ body.dark .todo-footer .filter-pc span:hover {
     }
 
     .todos {
-        height: 170px;
+        height: 120px;
     }
 
     .todo-footer {
@@ -756,7 +756,7 @@ body.dark .todo-footer .filter-pc span:hover {
     }
 
     .todos {
-        height: 150px;
+        height: 100px;
     }
 
     .the-button {
