@@ -14,6 +14,7 @@
     <!-- font Awesome links -->
     <link rel="stylesheet" href="./css/all.css">
     <link rel="stylesheet" href="./css/all.min.css">
+    <!--  -->
 </head>
 
 <body id="body" class="">
@@ -51,19 +52,19 @@
                 </div>
                 <div class="todo-footer">
                     <span id="items-left">0 itmes left</span>
-                    <div class="filter-pc">
-                        <span class="active">All</span>
-                        <span>Active</span>
-                        <span>Completed</span>
+                    <div class="filter-pc" id="fliter-pc">
+                        <span id="defaul-filter" onclick="filtering(this)" class="active">All</span>
+                        <span onclick="filtering(this)">Active</span>
+                        <span onclick="filtering(this)">Completed</span>
                     </div>
                     <span style="cursor: pointer;" id="clear-completed">Clear Completed</span>
                 </div>
                 <!-- End of todos -->
             </div>
-            <div class="filter-mobile">
-                <span class="active">All</span>
-                <span>Active</span>
-                <span>Completed</span>
+            <div class="filter-mobile" id="fliter-mobile">
+                <span onclick="filtering(this)" class="active">All</span>
+                <span onclick="filtering(this)">Active</span>
+                <span onclick="filtering(this)">Completed</span>
             </div>
         </div>
     </div>

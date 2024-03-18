@@ -57,7 +57,7 @@ let adding; // well have TRUE of FALSE value if it TRUE createNewTodo() will be 
 
 if (localStorage.getItem('todos')) {
     todos.innerHTML = localStorage.getItem('todos');
-}else{
+} else {
     todos.innerHTML = `<p id="if-empty" >Let's add it and do it !`;
 }
 
@@ -69,8 +69,9 @@ function addingTodo() {
             document.getElementById('if-empty').remove();
         }
         createNewTodo(); // call back createNewTodo function
-        saveTodos(); // call back this function to save todos in local storage after adding
         itemsLeft(); // call back itemsLeft
+        hideAndSHowFilter(); // for hide active todo if filter is copleted
+        saveTodos(); // call back this function to save todos in local storage after adding
     }
 }
 
@@ -118,7 +119,7 @@ function createNewTodo() {
 // End of adding new todo ///////////////////////////////////////////////////////////////////////////////////////////////
 
 // Start of deleting todo with X mark ////////////////////////////////////////////////////////////////////////////////////
-function deleteThisTodo(xMark){ // this function called from HTML element
+function deleteThisTodo(xMark) { // this function called from HTML element
     xMark.parentElement.remove();
     saveTodos(); // call back this function for saving todos in local storage
     itemsLeft(); // call back itemsLeft
@@ -129,10 +130,13 @@ function deleteThisTodo(xMark){ // this function called from HTML element
 // End of deleting todo with X mark ////////////////////////////////////////////////////////////////////////////////////
 
 // Start of mark is DONE ////////////////////////////////////////////////////////////////////////////////////
-function thisTodoIsDone(doneBtn){
+function thisTodoIsDone(doneBtn) {
     doneBtn.parentElement.parentElement.classList.toggle('done'); // if todo have a done class it well be removed // if have't it well add a done class
-    saveTodos(); // call back this function for saving todos in local storage
     itemsLeft(); // call back itemsLeft
+    setTimeout(() => {
+        hideAndSHowFilter(); // to hide done todo if filter is active
+        saveTodos(); // call back this function for saving todos in local storage
+    }, 300);
 }
 // End of mark is DONE ////////////////////////////////////////////////////////////////////////////////////
 
@@ -140,7 +144,7 @@ function thisTodoIsDone(doneBtn){
 
 document.getElementById('clear-completed').addEventListener('click', clearCompleted);
 
-function clearCompleted(){
+function clearCompleted() {
     let todosItems = todos.children;
     for (let i = 0; i < todosItems.length; i++) {
         if (todosItems[i].classList.contains('done')) {
@@ -153,8 +157,79 @@ function clearCompleted(){
     }
     saveTodos(); // call back this function for saving todos in local storage
 }
+// End of Clear Completed  ////////////////////////////////////////////////////////////////////////////////////
 
+// Start of filtering    ///////////////////////////////////////////////////////////////////////////////////////
+let filterMobile = document.getElementById('fliter-mobile'); // to get access on mobile filter
+let filterPc = document.getElementById('fliter-pc');    // to get access on PC filter
+let todosChidren = todos.children; // to access 
+let clickedCategory = 'All'; // to save category chosen
+function filtering(category) {
+    let bros = category.parentElement.children; // to acces brothers of clicked category
+    clickedCategory = category.innerHTML;
+    for (let i = 0; i < bros.length; i++) {
+        bros[i].classList.remove('active'); // to remove active class from all filter elements
+    }
+    category.classList.add('active'); // to add active class on clicked element
 
+    // this if condetion for add active class on other version of app (MOBILE or PC)
+    if (category.parentElement === filterPc) { // if clicked category is from filter pc children elements
+        for (let i = 0; i < filterMobile.children.length; i++) {
+            filterMobile.children[i].classList.remove('active') // for remove class active from all mobile filter category
+            if (filterMobile.children[i].innerHTML === clickedCategory) { // if true add active to the same category on mobile
+                filterMobile.children[i].classList.add('active');
+            }
+        }
+    } else if (category.parentElement === filterMobile) {
+        for (let i = 0; i < filterPc.children.length; i++) {
+            filterPc.children[i].classList.remove('active') // for remove class active from all PC filter category
+            if (filterPc.children[i].innerHTML === clickedCategory) { // if true add active to the same category on PC
+                filterPc.children[i].classList.add('active');
+            }
+        }
+    }
+    /////////////////////////end of styling filtering categories /////////////////////////
+    hideAndSHowFilter();
+    localStorage.setItem('avtiveFilter', clickedCategory);
+    saveTodos();
+}
+function hideAndSHowFilter() {
+    todosChidren = todos.children; // to access 
+    if (document.getElementById('if-empty') === null) {
+        for (let i = 0; i < todosChidren.length; i++) { // to loop on all todos
+            if (clickedCategory === 'All') {
+                todosChidren[i].style.display = 'flex';
+            } else if (clickedCategory === 'Active') {
+                if (todosChidren[i].classList.contains('done')) {
+                    todosChidren[i].style.display = 'none';
+                } else {
+                    todosChidren[i].style.display = 'flex';
+                }
+            } else if (clickedCategory === 'Completed') {
+                if (todosChidren[i].classList.contains('done')) {
+                    todosChidren[i].style.display = 'flex';
+                } else {
+                    todosChidren[i].style.display = 'none';
+                }
+            }
+        }
+    }
+}
+
+if (localStorage.getItem('avtiveFilter')) {
+    for (let i = 0; i < filterMobile.children.length; i++) {
+        filterMobile.children[i].classList.remove('active');
+        if (filterMobile.children[i].innerHTML === localStorage.getItem('avtiveFilter')) {
+            filterMobile.children[i].classList.add('active')
+        }
+    }
+    for (let i = 0; i < filterPc.children.length; i++) {
+        filterPc.children[i].classList.remove('active');
+        if (filterPc.children[i].innerHTML === localStorage.getItem('avtiveFilter')) {
+            filterPc.children[i].classList.add('active')
+        }
+    }
+}
 
 
 
@@ -166,7 +241,7 @@ function saveTodos() {
     localStorage.setItem('todos', `${todos.innerHTML}`);
 }
 // this function to control how many items left
-function itemsLeft(){
+function itemsLeft() {
     if (todos.innerHTML != `<p id="if-empty" >Let's add it and do it !`) { //check if todos have a todo
         const todosCount = todos.children.length; // to save todos children coun in a var
         let itemsLeftCount = 0; // declare a variable to save items left count on it
@@ -176,7 +251,7 @@ function itemsLeft(){
             }
         }
         document.getElementById('items-left').innerHTML = `${itemsLeftCount} itmes left`; // to add todosCount in items-left element
-    }else{
+    } else {
         document.getElementById('items-left').innerHTML = `0 itmes left`; // if todos list not have a todos make items-left equal ZERO
     }
 }
