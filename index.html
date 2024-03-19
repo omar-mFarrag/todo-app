@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>T O D O</title>
+    <!-- Google fonts links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100..700&display=swap" rel="stylesheet">
+    <!-- Styl sheets links -->
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- font Awesome links -->
+    <link rel="stylesheet" href="./css/all.css">
+    <link rel="stylesheet" href="./css/all.min.css">
+    <!--  -->
+</head>
+
+<body id="body" class="">
+    <!-- PC backgrounds Light and Dark theme -->
+    <img class="background" id="background" src="./images/bg-desktop-light.jpg" alt="">
+    <!-- high-laye -->
+    <div class="high-layer">
+        <!-- app UI -->
+        <div class="app-ui">
+            <!-- app header -->
+            <div class="header">
+                <h1>todo</h1>
+                <i id="theme-icon" style="transition: .3s;" class="fa-solid fa-moon"></i>
+            </div>
+            <!-- Todo creator -->
+            <div class="todo-creator">
+                <div class="the-button">
+                    <button id="adding-btn" class="add"><i class="fa-solid fa-check"></i></button>
+                </div>
+                <input id="todo-input" type="text" maxlength="150" placeholder="Create a new todo...">
+            </div>
+            <!-- end of todo creator -->
+            <!-- todoList -->
+            <div class="todo-list">
+                <!-- todos -->
+                <div id="todos" class="todos">
+                    <!-- Done one -->
+                    <div class="todo">
+                        <div class="todo-button">
+                            <button onclick="thisTodoIsDone()" class=""><i class="fa-solid fa-check"></i></button>
+                        </div>
+                        <p>Complete online JavaScript course</p>
+                        <i onclick="deleteThisTodo()" class="fa-solid fa-x"></i>
+                    </div>
+                </div>
+                <div class="todo-footer">
+                    <span id="items-left">0 itmes left</span>
+                    <div class="filter-pc" id="fliter-pc">
+                        <span id="defaul-filter" onclick="filtering(this)" class="active">All</span>
+                        <span onclick="filtering(this)">Active</span>
+                        <span onclick="filtering(this)">Completed</span>
+                    </div>
+                    <span style="cursor: pointer;" id="clear-completed">Clear Completed</span>
+                </div>
+                <!-- End of todos -->
+            </div>
+            <div class="filter-mobile" id="fliter-mobile">
+                <span onclick="filtering(this)" class="active">All</span>
+                <span onclick="filtering(this)">Active</span>
+                <span onclick="filtering(this)">Completed</span>
+            </div>
+        </div>
+    </div>
+    <!-- JS scripts link -->
+    <script src="./js/sctipt.js"></script>
+</body>
+
+</html>
