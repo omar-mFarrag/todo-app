@@ -242,7 +242,7 @@ function saveTodos() {
 }
 // this function to control how many items left
 function itemsLeft() {
-    if (todos.innerHTML != `<p id="if-empty" >Let's add it and do it !`) { //check if todos have a todo
+    if (document.getElementById('if-empty') === null) { //check if todos have a todo
         const todosCount = todos.children.length; // to save todos children coun in a var
         let itemsLeftCount = 0; // declare a variable to save items left count on it
         for (let i = 0; i < todosCount; i++) {

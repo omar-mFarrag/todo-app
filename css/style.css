@@ -167,10 +167,12 @@ body.dark {
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 /* App UI */
 .app-ui {
+    height: 85%;
     width: 600px;
     display: flex;
     flex-direction: column;
@@ -254,6 +256,9 @@ body.dark .todo-creator input::placeholder {
     border-radius: 7px;
     overflow: hidden;
     height: fit-content;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .todos {
@@ -262,6 +267,7 @@ body.dark .todo-creator input::placeholder {
     display: flex;
     flex-direction: column;
     position: relative;
+    flex-grow: 1;
 }
 
 body.dark .todos {
@@ -481,6 +487,7 @@ body.dark .todo-footer .filter-pc span:hover {
 @media (max-width: 1024px) {
     body .app-ui {
         width: 95%;
+        height: 90%;
         gap: 10px;
     }
 
@@ -502,6 +509,7 @@ body.dark .todo-footer .filter-pc span:hover {
         opacity: 1;
         font-size: 16px;
     }
+    
 }
 
 @media (max-width: 767px) {
@@ -546,7 +554,9 @@ body.dark .todo-footer .filter-pc span:hover {
     .todo-footer .filter-pc {
         display: none;
     }
-
+    body .app-ui{
+        height: 95%;
+    }
     .filter-mobile {
         display: flex;
         background-color: var(--light-List-Background);
@@ -576,51 +586,6 @@ body.dark .todo-footer .filter-pc span:hover {
         color: var(--Bright-Blue);
     }
 }
-
-/* For handeling heights */
-/* iPad Pro screen */
-@media (max-height: 1370px) {
-    .todos {
-        height: 1000px;
-    }
-}
-
-/* iPad Air */
-@media (max-height: 1181px) {
-    .todos {
-        height: 900px;
-    }
-}
-
-/* iPad */
-/* iPad Mini */
-@media (max-height: 1024px) {
-    .todos {
-        height: 700px;
-    }
-}
-
-/* iPhone 14 pro max */
-@media (max-height: 935px) {
-    .todos {
-        height: 600px;
-    }
-}
-
-/* iPhone 12 pro */
-@media (max-height: 844px) {
-    .todos {
-        height: 500px;
-    }
-}
-
-/* iPhone 6.7.8 plus */
-@media (max-height: 748px) {
-    .todos {
-        height: 400px;
-    }
-}
-
 /* iPhone SE */
 @media (max-width: 450px) {
     .todo-creator {
@@ -657,19 +622,6 @@ body.dark .todo-footer .filter-pc span:hover {
         font-size: 14px;
     }
 }
-
-@media (max-height: 668px) {
-    .todos {
-        height: 350px;
-    }
-}
-
-@media (max-height: 569px) {
-    .todos {
-        height: 280px;
-    }
-}
-
 /* iPhone 4 */
 @media (max-height: 481px) {
     body .app-ui {
@@ -730,21 +682,12 @@ body.dark .todo-footer .filter-pc span:hover {
     .todo-creator input {
         height: 20px;
     }
-
-    .todos {
-        height: 220px;
-    }
 }
 
 @media (max-height: 370px) {
     .todo-creator input {
         height: 20px;
     }
-
-    .todos {
-        height: 170px;
-    }
-
     .todo-footer {
         padding: 5px 10px;
     }
@@ -754,11 +697,6 @@ body.dark .todo-footer .filter-pc span:hover {
     .todo-creator input {
         height: 20px;
     }
-
-    .todos {
-        height: 150px;
-    }
-
     .the-button {
         padding: 1px;
     }
